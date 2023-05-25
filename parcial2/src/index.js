@@ -6,13 +6,15 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Books from './books';
 
-
+import {IntlProvider} from 'react-intl';
+//import localesMessages from './locales';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <IntlProvider locale="en">
+    <Books />
+  </IntlProvider>
 );
 
 // If you want your app to work offline and load faster, you can change

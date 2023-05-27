@@ -1,0 +1,14 @@
+.book-manager-container {
+    display: flex;
+  }
+  
+  .book-collection {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .book-detail {
+    flex: 1;
+    padding: 20px;
+  }
+  

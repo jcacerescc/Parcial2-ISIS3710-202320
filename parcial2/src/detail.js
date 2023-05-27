@@ -9,7 +9,7 @@ export default function Detail() {
   useEffect(() => {
     const fetchbook = async () => {
       const URL =
-        "https://gist.githubusercontent.com/josejbocanegra/829a853c6c68880477697acd0490cecc/raw/99c31372b4d419a855e53f0e891246f313a71b20/books.json";
+        "http://localhost:3000/books";
       const response = await fetch(URL);
       const data = await response.json();
       const bookEncontrada = data.find(

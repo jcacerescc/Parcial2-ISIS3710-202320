@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import descargar from './descargar.png';
+
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Books from './books';
-import Detail from './detail';
-import NavBar from './navBar';
+
+import LoginForm from './login';
+import BookManager from './BookManager';
+import { useState, useEffect } from "react";
 
 function App() {
-  return  (
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  const autenticate = () => {
+    setLoggedIn(true);      
+    console.log("Autenticado")
+  };
+
+  useEffect(() => {
+    console.log("isLoggedIn:", isLoggedIn);
+  }, [isLoggedIn]);
+  
+  return (
     <div className="App">
-    <NavBar></NavBar>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/books/:bookId" element={<Detail />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
-);
+      {isLoggedIn ? (
+        // para que funcione el login, se debe cambiar el componente BookManager por el componente LoginForm
+        // se debe declarar props.onLogin en el componente LoginForm
+        
+        <BookManager />
+      ) : (
+        // no se debe devobe devolver al login
+        <LoginForm onLogin={autenticate} /> 
+
+
+      )}
+    </div>
+  );
 }
 
 export default App;

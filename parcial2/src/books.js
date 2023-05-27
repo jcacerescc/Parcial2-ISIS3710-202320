@@ -1,21 +1,19 @@
 import Book from './book.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+const { useEffect, useState } = require("react");
 
-const { useState, useEffect } = require("react");
-
-function Books(props) {
-    const [books, setBooks] = useState([]);
-useEffect(() => {
-    const URL ="http://localhost:3000/books";
+function Books() {
+ const [books, setBooks] = useState([]);
+    useEffect(() => {
+    const URL = "http://localhost:3000/books";
     // file is a api call to get the data from the server
     //transform the data into json
     
     fetch(URL)
-    .then((data) => data.json())
-    .then((data) => {
+        .then((data) => data.json())
+        .then((data) => {
       setBooks(data);
-      console.log(data);
     });
 }, []);
 

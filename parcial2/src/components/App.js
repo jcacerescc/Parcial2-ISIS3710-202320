@@ -4,6 +4,7 @@ import './App.css';
 
 import LoginForm from './login';
 import BookManager from './BookManager';
+
 import { useState, useEffect } from "react";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
   
   return (
     <div className="App">
-      {isLoggedIn ? (
+      {!isLoggedIn ? (
         // para que funcione el login, se debe cambiar el componente BookManager por el componente LoginForm
         // se debe declarar props.onLogin en el componente LoginForm
         

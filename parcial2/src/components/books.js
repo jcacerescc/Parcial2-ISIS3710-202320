@@ -1,21 +1,27 @@
 import Book from './book.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+
+import axios from 'axios';
+
+
+
 const { useEffect, useState } = require("react");
 
 function Books() {
  const [books, setBooks] = useState([]);
     useEffect(() => {
-    const URL = "http://localhost:3000/books";
+    const URL = "http://localhost:8080/books";
     // file is a api call to get the data from the server
     //transform the data into json
     
-    fetch(URL)
-        .then((data) => data.json())
-        .then((data) => {
-      setBooks(data);
+    axios.get(URL).then((response) => {
+        console.log(response.data);
+        setBooks(response.data);
     });
 }, []);
+
 
     return (
         <div className="container">

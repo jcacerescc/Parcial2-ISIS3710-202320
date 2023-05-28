@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './login.css';
-import descargar from './descargar.png';
-
+import descargar from '../descargar.png';
+import axios from 'axios';
 function LoginForm(props) {
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,23 +17,21 @@ function LoginForm(props) {
       alert('La contraseña debe tener al menos 8 caracteres');
       return;
     }
-
-    fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    })
-      .then(response => response.json())
-      .then(data => {
+    const URL = 'http://localhost:8080/login';
+    const data = {
+      email: email,
+      password: password,
+    };
+    axios.post(URL, data).then((response) => {
+      console.log(response.data);
+      if (response.data.rol === 'Administrador') {
+        // if role is admin allow access
         props.onLogin();
-        console.log(data);
-      })
-      .catch(error => console.log(error));
-      };
-
-
+      } else {
+        alert('Usuario o contraseña incorrectos');
+      }
+    });
+  }
   return (
     <div className="login-container">
       <div className="image-container">
@@ -76,5 +74,7 @@ function LoginForm(props) {
     </div>
   );
 }
+
+
 
 export default LoginForm;

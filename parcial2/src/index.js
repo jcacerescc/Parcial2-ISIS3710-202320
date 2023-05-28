@@ -5,13 +5,15 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
+import { IntlProvider } from 'react-intl';
+import localeEsMessages from "./locales/es";
 
 ReactDOM.render(
-  //no usar strict mode
 
+  <IntlProvider locale="en" messages={localeEsMessages}>
 
-   <App />, // Renderiza directamente el componente App
-  document.getElementById('root')
+   <App />, 
+  </IntlProvider>, document.getElementById("root")
 );
 
 serviceWorkerRegistration.unregister();

@@ -1,6 +1,7 @@
 import {  useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import React, { useState, useContext } from 'react';
+import { FormattedMessage } from "react-intl";
 
 function Detail() {
   const params = useParams();
@@ -18,7 +19,9 @@ function Detail() {
   }, [params.bookId]);
 
   if (!bookDetail) {
-    return <div>Loading...</div>;
+    return <div>
+      <FormattedMessage id="Loading..." />
+    </div>;
   }
 
   const handleEdit = () => {
@@ -35,51 +38,56 @@ function Detail() {
         <table className="table table-borderless">
           <tbody>
           <tr>
-              <td><strong>Name:</strong></td>
+              <td><strong>
+                <FormattedMessage id="name:" />
+                :</strong></td>
               <td>{isEditable ? <input value={bookDetail.name} /> : bookDetail.name}</td>
             </tr>
             <tr>
-              <td><strong>ISBN:</strong></td>
+              <td><strong>
+                <FormattedMessage id="isbn:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.isbn} /> : bookDetail.isbn}</td>
             </tr>
             <tr>
-              <td><strong>Author:</strong></td>
+              <td><strong>
+                <FormattedMessage id="author:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.author} /> : bookDetail.author}</td>
             </tr>
             <tr>
-              <td><strong>Year:</strong></td>
+              <td><strong>
+                <FormattedMessage id="year:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.year} /> : bookDetail.year}</td>
             </tr>
             <tr>
-              <td><strong>Genre:</strong></td>
+              <td><strong>
+                <FormattedMessage id="genre:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.gender} /> : bookDetail.genre}</td>
             </tr>
             <tr>
-              <td><strong>Publisher:</strong></td>
+              <td><strong>
+                <FormattedMessage id="publisher:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.publisher} /> : bookDetail.publisher}</td>
             </tr>
+            
             <tr>
-              <td><strong>Available Online:</strong></td>
-              <td>{isEditable ? <input value={bookDetail.available_online} /> : bookDetail.available_online}</td>
-            </tr>
-            <tr>
-              <td><strong>Price:</strong></td>
+              <td><strong>
+                <FormattedMessage id="price:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.price} /> : `${bookDetail.price} $`}</td>
             </tr>
             <tr>
-              <td><strong>Summary:</strong></td>
+              <td><strong>
+                <FormattedMessage id="summary:" />
+                </strong></td>
               <td>{isEditable ? <input value={bookDetail.summary} /> : bookDetail.summary}</td>
             </tr>
           </tbody>
         </table>
-        {isEditable ? (
-          <div>
-            <button onClick={handleCancelEdit}>Cancel</button>
-            <button>Save</button>
-          </div>
-        ) : (
-          <button onClick={handleEdit}>Edit</button>
-        )}
       </div>
     </div>
   );

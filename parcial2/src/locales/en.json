@@ -1,8 +1,19 @@
-
 {
-    "id": "identificador",
-    "name": "nombre",
-    "isbn": "isbn",
-    "image": "Portada"
-
-}
+    "id:": "ID:",
+    "name:": "Name:",
+    "isbn:": "ISBN:",
+    "image:": "Cover:",
+    "author:": "Author:",
+    "publisher:": "Publisher:",
+    "year:": "Year:",
+    "genre:": "Genre:",
+    "summary:": "Summary:",
+    "price:": "Price:",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "Did you forget your password?": "Did you forget your password?",
+    "List of books": "List of books",
+    "Loading...": "Loading..."
+  }
+  

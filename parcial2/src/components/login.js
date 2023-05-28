@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './login.css';
 import descargar from '../descargar.png';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
+import { FormattedMessage } from 'react-intl';
 function LoginForm(props) {
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -38,7 +39,9 @@ function LoginForm(props) {
       <div className="form-container">
         <form className="login-form">
           <div className="form-group">
-            <label htmlFor="email">Correo electrónico</label>
+            <label htmlFor="email">
+              <FormattedMessage id="email" />
+            </label>
             <input
               type="text"
               id="email"
@@ -48,7 +51,9 @@ function LoginForm(props) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="password">
+              <FormattedMessage id="password" />
+            </label>
             <input
               type="password"
               id="password"
@@ -62,10 +67,12 @@ function LoginForm(props) {
             className="btn btn-primary btn-block"
             onClick={handleLogin}
           >
-            Iniciar sesión
+            <FormattedMessage id="login" />
           </button>
           <div className="text-left">
-            <a href="#">¿Ha olvidado su contraseña?</a>
+            <a href="#">
+              <FormattedMessage id="Did you forget your password?" />
+            </a>
           </div>
         </form>
       </div>

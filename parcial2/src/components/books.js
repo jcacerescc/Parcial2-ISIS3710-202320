@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 
 import axios from 'axios';
-
+import { FormattedMessage } from 'react-intl';
 
 
 const { useEffect, useState } = require("react");
@@ -25,7 +25,7 @@ function Books() {
 
     return (
         <div className="container">
-            <h2 className="mt-2">Listado de libros</h2>
+            <h2 className="mt-2"><FormattedMessage id="List of books" /></h2>
             <hr></hr>
            
 

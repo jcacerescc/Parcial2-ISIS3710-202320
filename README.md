@@ -15,9 +15,9 @@
 6.) El componente Detail es responsable de mostrar los detalles de un libro específico en una interfaz de usuario. Este componente se utiliza dentro de la aplicación para visualizar información detallada sobre un libro seleccionado.
 7.) Se implementó la gestión del estado local utilizando el hook useState de React para controlar los datos del formulario de inicio de sesión y el estado de autenticación.
 8.) Se utilizó el componente BrowserRouter de la librería react-router-dom para habilitar la navegación entre diferentes vistas de la aplicación. Se crearon rutas para el login y la página principal.
-9.) Para mejorar la experiencia de usuario, se agregó validación de formulario en el componente Login utilizando el atributo required de los campos de entrada y se mostraron mensajes de error en caso de campos vacíos.
+9.) Se agregó validación de formulario en el componente Login utilizando el atributo required de los campos de entrada y se mostraron mensajes de error en caso de campos vacíos o incorrectos.
 10.) Se utilizó el componente axios para realizar las peticiones HTTP al backend. Se implementaron funciones en el componente Login para enviar la solicitud de inicio de sesión y manejar la respuesta del servidor.
 11.) Se implementó la protección de rutas utilizando el componente PrivateRoute, que verifica si el usuario está autenticado antes de permitir el acceso a las vistas protegidas. Si el usuario no está autenticado, se redirige automáticamente al inicio de sesión.
-12.) Para mejorar la presentación visual, se utilizó el framework de CSS Bootstrap para aplicar estilos a los componentes y lograr un diseño atractivo y responsivo.
-13.) Se implementó la internacionalización en la aplicación mediante el uso de archivos de traducción en formato JSON. Se crearon archivos es.json y en.json para proporcionar las traducciones en español e inglés, respectivamente. Se utilizó el componente i18next para gestionar las traducciones y cambiar el idioma de la aplicación.
+12.) Se utilizó el framework de CSS Bootstrap para aplicar estilos a los componentes y lograr un diseño atractivo y responsivo.
+13.) Se implementó la internacionalización con react-intl en la aplicación mediante el uso de archivos de traducción en formato JSON. Se crearon archivos es.json y en.json para proporcionar las traducciones en español e inglés, respectivamente. 
 

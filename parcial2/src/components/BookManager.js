@@ -6,6 +6,8 @@ import Detail from './detail';
 
 const bookManagerStyle = {
   display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
 };
 
 const bookCollectionStyle = {
@@ -31,8 +33,8 @@ function BookManager() {
 
   return (
     <div style={bookManagerStyle}>
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <div style={bookCollectionStyle}>
           <Routes>
             <Route path="/" element={<Books onBookClick={handleBookClick} />} />

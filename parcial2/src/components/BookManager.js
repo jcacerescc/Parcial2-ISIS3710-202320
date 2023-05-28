@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import NavBar from './navBar';
 import Books from './books';
 import Detail from './detail';
@@ -20,15 +20,11 @@ const bookDetailStyle = {
   padding: '20px',
 };
 
-function BookManager() {
-  const [selectedBook, setSelectedBook] = useState(null);
+function BookManager({ rol }) {
+  const [, setSelectedBook] = useState(null);
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
-  };
-
-  const handleClearSelection = () => {
-    setSelectedBook(null);
   };
 
   return (
@@ -43,15 +39,10 @@ function BookManager() {
         </div>
         <div style={bookDetailStyle}>
           <Routes>
-            <Route path="/books/:bookId" element={<Detail />} />
+            <Route path="/books/:bookId" element={<Detail rol={rol} />} />
           </Routes>
         </div>
       </BrowserRouter>
-      {selectedBook && (
-        <div className="book-detail">
-          <Detail book={selectedBook} onClose={handleClearSelection} />
-        </div>
-      )}
     </div>
   );
 }

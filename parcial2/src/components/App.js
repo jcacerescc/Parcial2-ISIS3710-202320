@@ -9,28 +9,19 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [rol, setRol] = useState('');
 
-  const autenticate = () => {
-    setLoggedIn(true);      
-    console.log("Autenticado")
+  const authenticate = (rol) => {
+    setLoggedIn(true);
+    setRol(rol);
   };
 
-  useEffect(() => {
-    console.log("isLoggedIn:", isLoggedIn);
-  }, [isLoggedIn]);
-  
   return (
     <div className="App">
       {!isLoggedIn ? (
-        // para que funcione el login, se debe cambiar el componente BookManager por el componente LoginForm
-        // se debe declarar props.onLogin en el componente LoginForm
-        
-        <BookManager />
+        <LoginForm onLogin={authenticate} />
       ) : (
-        // no se debe devobe devolver al login
-        <LoginForm onLogin={autenticate} /> 
-
-
+        <BookManager rol={rol} />
       )}
     </div>
   );

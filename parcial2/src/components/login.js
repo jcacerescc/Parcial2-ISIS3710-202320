@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './login.css';
 import descargar from '../descargar.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function LoginForm(props) {
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -24,12 +25,9 @@ function LoginForm(props) {
     };
     axios.post(URL, data).then((response) => {
       console.log(response.data);
-      if (response.data.rol === 'Administrador') {
-        // if role is admin allow access
+      
         props.onLogin();
-      } else {
-        alert('Usuario o contraseña incorrectos');
-      }
+
     });
   }
   return (

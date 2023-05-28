@@ -10,7 +10,7 @@ function Detail() {
 
   useEffect(() => {
     const fetchBookDetail = async () => {
-      const URL = `http://localhost:8080/books/${params.bookId}`;
+      const URL = `http://localhost:3000/books/${params.bookId}`;
       const response = await fetch(URL);
       const data = await response.json();
       setBookDetail(data);

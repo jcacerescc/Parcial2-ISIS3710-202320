@@ -12,7 +12,7 @@ const { useEffect, useState } = require("react");
 function Books() {
  const [books, setBooks] = useState([]);
     useEffect(() => {
-    const URL = "http://localhost:8080/books";
+    const URL = "http://localhost:3000/books";
     // file is a api call to get the data from the server
     //transform the data into json
     
